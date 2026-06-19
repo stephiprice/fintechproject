@@ -1,6 +1,6 @@
 # Chat log, CreditPass
 
-A record of how we used an AI coding agent (Claude Code) to build the MVP, and the key decisions we accepted or rejected along the way. This documents our agent orchestration, as asked in the assignment.
+A record of how we used an AI coding agent (Claude Code, running Claude Opus 4.8 with the 1 million token context window) to build the MVP, and the key decisions we accepted or rejected along the way. This documents our agent orchestration, as asked in the assignment.
 
 How we worked: we drove the agent feature by feature, reviewed every change, ran the app and the tests after each step, and committed in small chunks on a feature branch that we merged through a pull request. We accepted suggestions that improved explainability, safety, and reproducibility, and rejected ones that added complexity or hidden behaviour.
 

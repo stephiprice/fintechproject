@@ -159,9 +159,15 @@ Two contributors built this, working in parallel on separate branches and integr
 
 The single integration point is creditpass/decision.py. Both engines build against it, so the two tracks develop independently without conflicts.
 
-## AI tooling
+## Development setup and AI tooling
 
-This project was developed with agentic coding assistants. See CLAUDE.md for the project specific agent instructions. The authors reviewed and accepted all design decisions, the scoring logic, and the final code.
+The code is Python with the Streamlit framework. We built it with Claude Code, the agentic command line tool from Anthropic, running Claude Opus 4.8 with the 1 million token context window.
+
+Why this agent: Claude Code edits files, runs the app and the tests, and fixes errors on its own inside the project folder, so it works from the whole codebase rather than a single snippet. The large context window let it hold the full repository, the business plan, and the assignment brief in mind at once.
+
+How we orchestrate it: a CLAUDE.md file in the repository root gives the agent persistent project rules (the architecture, the shared contract, and the ownership split between the two tracks). We worked one feature at a time, reviewed every change, ran the tests after each step, and committed in small chunks. The suggestions we accepted and rejected are recorded in chat_log.md.
+
+The authors reviewed and accepted all design decisions, the scoring logic, and the final code.
 
 ## License
 
