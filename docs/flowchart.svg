@@ -1,0 +1,81 @@
+<svg viewBox="0 0 760 880" xmlns="http://www.w3.org/2000/svg" role="img" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title>CreditPass business plan features implemented versus not</title>
+  <desc>A vertical flow of the CreditPass pipeline. Green boxes are implemented, the amber box (AI credit memo) is in progress on Track B, and a grey panel lists features not in this MVP.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 z" fill="#57606a"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="760" height="880" fill="#ffffff"/>
+  <text x="380" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#1f2328">CreditPass: business plan features implemented vs not</text>
+
+  <!-- Legend -->
+  <rect x="120" y="50" width="14" height="14" rx="3" fill="#e6f4ea" stroke="#1a7f37"/>
+  <text x="140" y="62" font-size="13" fill="#1f2328">Implemented</text>
+  <rect x="270" y="50" width="14" height="14" rx="3" fill="#fdf1dd" stroke="#9a6700"/>
+  <text x="290" y="62" font-size="13" fill="#1f2328">In progress (Track B)</text>
+  <rect x="470" y="50" width="14" height="14" rx="3" fill="#eef0f2" stroke="#8b949e"/>
+  <text x="490" y="62" font-size="13" fill="#1f2328">Not in this MVP</text>
+
+  <!-- Arrows -->
+  <g stroke="#57606a" stroke-width="2" marker-end="url(#arrow)">
+    <line x1="380" y1="136" x2="380" y2="156"/>
+    <line x1="380" y1="204" x2="380" y2="224"/>
+    <line x1="380" y1="272" x2="380" y2="292"/>
+    <line x1="380" y1="340" x2="380" y2="360"/>
+    <line x1="380" y1="408" x2="380" y2="428"/>
+    <line x1="380" y1="476" x2="380" y2="496"/>
+    <line x1="380" y1="544" x2="380" y2="564"/>
+    <line x1="380" y1="612" x2="380" y2="632"/>
+  </g>
+
+  <!-- Step boxes -->
+  <g font-size="15" font-weight="600">
+    <rect x="170" y="90" width="420" height="46" rx="8" fill="#e6f4ea" stroke="#1a7f37"/>
+    <text x="186" y="111" fill="#0b5d2a">1  Applicant input</text>
+    <text x="186" y="128" font-size="12" font-weight="400" fill="#3a4a40">bank transactions CSV + applicant form</text>
+
+    <rect x="170" y="158" width="420" height="46" rx="8" fill="#e6f4ea" stroke="#1a7f37"/>
+    <text x="186" y="179" fill="#0b5d2a">2  Validate and clean data</text>
+    <text x="186" y="196" font-size="12" font-weight="400" fill="#3a4a40">required columns, types, size limit</text>
+
+    <rect x="170" y="226" width="420" height="46" rx="8" fill="#e6f4ea" stroke="#1a7f37"/>
+    <text x="186" y="247" fill="#0b5d2a">3  Credit scoring</text>
+    <text x="186" y="264" font-size="12" font-weight="400" fill="#3a4a40">cash flow, negative days, debt, affordability</text>
+
+    <rect x="170" y="294" width="420" height="46" rx="8" fill="#e6f4ea" stroke="#1a7f37"/>
+    <text x="186" y="315" fill="#0b5d2a">4  KYC / CDD screening</text>
+    <text x="186" y="332" font-size="12" font-weight="400" fill="#3a4a40">UBO, sanctions and PEP (mock), country</text>
+
+    <rect x="170" y="362" width="420" height="46" rx="8" fill="#e6f4ea" stroke="#1a7f37"/>
+    <text x="186" y="383" fill="#0b5d2a">5  Decision fusion</text>
+    <text x="186" y="400" font-size="12" font-weight="400" fill="#3a4a40">Go / Review / Decline</text>
+
+    <rect x="170" y="430" width="420" height="46" rx="8" fill="#e6f4ea" stroke="#1a7f37"/>
+    <text x="186" y="451" fill="#0b5d2a">6  Explainable flags + chart</text>
+    <text x="186" y="468" font-size="12" font-weight="400" fill="#3a4a40">risk flags and balance over time</text>
+
+    <rect x="170" y="498" width="420" height="46" rx="8" fill="#fdf1dd" stroke="#9a6700"/>
+    <text x="186" y="519" fill="#6b4800">7  AI drafted credit memo</text>
+    <text x="186" y="536" font-size="12" font-weight="400" fill="#6b4800">Track B, in progress</text>
+
+    <rect x="170" y="566" width="420" height="46" rx="8" fill="#e6f4ea" stroke="#1a7f37"/>
+    <text x="186" y="587" fill="#0b5d2a">8  Analyst decision + audit log</text>
+    <text x="186" y="604" font-size="12" font-weight="400" fill="#3a4a40">human in the loop, decision recorded</text>
+
+    <rect x="170" y="634" width="420" height="46" rx="8" fill="#e6f4ea" stroke="#1a7f37"/>
+    <text x="186" y="655" fill="#0b5d2a">9  Export assessment</text>
+    <text x="186" y="672" font-size="12" font-weight="400" fill="#3a4a40">download as JSON</text>
+  </g>
+
+  <!-- Deferred panel -->
+  <rect x="120" y="722" width="520" height="118" rx="10" fill="#eef0f2" stroke="#8b949e"/>
+  <text x="140" y="748" font-size="15" font-weight="700" fill="#444c56">Not in this MVP (named in the README as future work)</text>
+  <g font-size="13" fill="#444c56">
+    <text x="140" y="772">PDF and scanned document ingestion</text>
+    <text x="140" y="792">Live PSD2 account data feed</text>
+    <text x="140" y="812">Real sanctions, PEP and adverse media data sources</text>
+    <text x="140" y="832">Post loan monitoring and user authentication</text>
+  </g>
+</svg>
