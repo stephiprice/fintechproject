@@ -11,12 +11,10 @@
   <text x="380" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#1f2328">CreditPass: business plan features implemented vs not</text>
 
   <!-- Legend -->
-  <rect x="120" y="50" width="14" height="14" rx="3" fill="#e6f4ea" stroke="#1a7f37"/>
-  <text x="140" y="62" font-size="13" fill="#1f2328">Implemented</text>
-  <rect x="270" y="50" width="14" height="14" rx="3" fill="#fdf1dd" stroke="#9a6700"/>
-  <text x="290" y="62" font-size="13" fill="#1f2328">In progress (Track B)</text>
-  <rect x="470" y="50" width="14" height="14" rx="3" fill="#eef0f2" stroke="#8b949e"/>
-  <text x="490" y="62" font-size="13" fill="#1f2328">Not in this MVP</text>
+  <rect x="200" y="50" width="14" height="14" rx="3" fill="#e6f4ea" stroke="#1a7f37"/>
+  <text x="220" y="62" font-size="13" fill="#1f2328">Implemented</text>
+  <rect x="380" y="50" width="14" height="14" rx="3" fill="#eef0f2" stroke="#8b949e"/>
+  <text x="400" y="62" font-size="13" fill="#1f2328">Not in this MVP</text>
 
   <!-- Arrows -->
   <g stroke="#57606a" stroke-width="2" marker-end="url(#arrow)">
@@ -56,9 +54,9 @@
     <text x="186" y="451" fill="#0b5d2a">6  Explainable flags + chart</text>
     <text x="186" y="468" font-size="12" font-weight="400" fill="#3a4a40">risk flags and balance over time</text>
 
-    <rect x="170" y="498" width="420" height="46" rx="8" fill="#fdf1dd" stroke="#9a6700"/>
-    <text x="186" y="519" fill="#6b4800">7  AI drafted credit memo</text>
-    <text x="186" y="536" font-size="12" font-weight="400" fill="#6b4800">Track B, in progress</text>
+    <rect x="170" y="498" width="420" height="46" rx="8" fill="#e6f4ea" stroke="#1a7f37"/>
+    <text x="186" y="519" fill="#0b5d2a">7  AI drafted credit memo</text>
+    <text x="186" y="536" font-size="12" font-weight="400" fill="#3a4a40">deterministic, cites the numbers</text>
 
     <rect x="170" y="566" width="420" height="46" rx="8" fill="#e6f4ea" stroke="#1a7f37"/>
     <text x="186" y="587" fill="#0b5d2a">8  Analyst decision + audit log</text>

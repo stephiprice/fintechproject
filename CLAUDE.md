@@ -13,7 +13,8 @@ Respect these boundaries:
 * app.py : the Streamlit UI. It orchestrates a request. It contains no scoring logic.
 * creditpass/decision.py : the shared contract. It combines the two sub scores into a recommendation. Edit with care.
 * creditpass/credit.py : the credit scoring engine (cash flow, debt, affordability). Track A.
-* creditpass/kyc.py : the KYC/CDD screening engine (UBO, sanctions, country). Track B.
+* creditpass/kyc.py : the KYC/CDD screening engine (UBO, sanctions, PEP, country, sector). Track B.
+* creditpass/memo.py : drafts the credit memo from the assessment result. Track B.
 * creditpass/validation.py : validates and cleans uploaded transaction files before scoring.
 * data/generate_synthetic.py : reproducible synthetic demo data with a fixed seed.
 * tests/ : the pytest suite. Run python -m pytest before merging.

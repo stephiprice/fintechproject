@@ -18,6 +18,7 @@ This is the MVP for Assignment 2 of FinTech: Business Models and Application (RS
 * **Validated input:** uploaded files are checked and cleaned before scoring, with clear error messages instead of crashes.
 * **Audit log:** every analyst decision is written to a local audit log with a timestamp.
 * **Export:** the full assessment can be downloaded as a JSON file.
+* **Credit memo:** a one page memo is drafted from the assessment, citing the numbers behind the decision, for the officer to review and edit.
 
 ## How it works
 
@@ -28,7 +29,7 @@ The flow has four steps:
 3. decision.py combines the two sub scores into one overall score and a Go, Review, or Decline recommendation. Any high severity flag forces a Decline.
 4. app.py shows the result and lets the analyst record the final decision.
 
-The score is deterministic and traceable to its inputs. This keeps the high stakes part out of the EU AI Act high risk decisioning category. The AI drafted credit memo (Track B) only drafts text and cites its sources. It never changes the score.
+The score is deterministic and traceable to its inputs. This keeps the high stakes part out of the EU AI Act high risk decisioning category. The credit memo only drafts text and cites its sources. It never changes the score.
 
 ## How to run
 
@@ -107,8 +108,10 @@ You should see all tests pass.
 * creditpass/decision.py : the shared contract. Combines credit and KYC into a decision.
 * creditpass/credit.py : the credit scoring engine (Track A).
 * creditpass/kyc.py : the KYC/CDD screening engine (Track B).
+* creditpass/memo.py : drafts the one page credit memo from the assessment (Track B).
 * creditpass/validation.py : checks and cleans uploaded transaction files.
 * data/generate_synthetic.py : builds three demo SME profiles.
+* data/sanctions_mock.json : synthetic mock sanctions, PEP, and adverse media lists.
 * data/samples/ : the generated demo CSV files.
 * tests/ : the pytest test suite.
 * .streamlit/config.toml : app settings, including the upload size limit.
@@ -127,10 +130,7 @@ Implemented in this MVP:
 * Go, Review, or Decline recommendation.
 * Explainable risk flags.
 * Human in the loop decision.
-
-In progress (Track B):
-
-* AI drafted credit memo with citations.
+* AI drafted credit memo that cites the assessment numbers.
 
 Not in this MVP, planned for later:
 
