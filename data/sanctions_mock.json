@@ -1,0 +1,39 @@
+{
+  "_note": "Synthetic mock screening lists for the CreditPass demo. Not real sanctions or PEP data. Names are invented for testing.",
+  "sanctions": [
+    "John Doe",
+    "Ivan Petrov",
+    "Acme Shell Ltd",
+    "Viktor Orlov",
+    "Global Phantom Trading",
+    "Nadia Volkov"
+  ],
+  "pep": [
+    "Maria Santos",
+    "Chen Wei",
+    "Abdullah Rahman",
+    "Olena Marchenko"
+  ],
+  "adverse_media": [
+    "Peter Kowalski",
+    "Brightstar Holdings",
+    "Lars Henriksen"
+  ],
+  "prohibited_countries": ["KP", "IR", "SY", "CU"],
+  "high_risk_countries": ["RU", "BY", "AF", "YE", "MM", "VE"],
+  "high_risk_sectors": [
+    "crypto",
+    "cryptocurrency",
+    "gambling",
+    "casino",
+    "betting",
+    "arms",
+    "weapons",
+    "defence",
+    "defense",
+    "money service",
+    "money transfer",
+    "precious metals",
+    "adult entertainment"
+  ]
+}
