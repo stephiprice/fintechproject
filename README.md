@@ -115,6 +115,8 @@ You should see all tests pass.
 * requirements.txt : the Python dependencies to run the app.
 * requirements-dev.txt : extra dependencies to run the tests.
 * CLAUDE.md : instructions for AI coding agents.
+* prompt.md : the original build specification given to the agent.
+* chat_log.md : a record of the AI sessions and the decisions we accepted or rejected.
 * README.md : this file.
 
 ## Mapping to the business plan
