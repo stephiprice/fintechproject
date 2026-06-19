@@ -42,6 +42,19 @@ Key decisions:
 * Rejected: committing the audit log to the repository. It is runtime output, so it is gitignored.
 * Deferred on purpose: PDF ingestion, live PSD2 and sanctions feeds, and authentication. These are named in the README as out of scope for the MVP.
 
+## Session 4, Track B (KYC screening and credit memo)
+
+Prompt focus: build the KYC/CDD screening engine and the credit memo, and stress test them.
+
+Key decisions:
+
+* Accepted: screening data in data/sanctions_mock.json (synthetic sanctions, PEP, and adverse media names, plus prohibited and high risk countries and high risk sectors), loaded with a safe fallback so screening never silently passes if the file is missing.
+* Accepted: normalised name matching (lowercase, punctuation stripped, whitespace collapsed) so small formatting differences still match, and screening the company name as well as the beneficial owners.
+* Accepted: whole word matching for sectors, after a destruction test showed that a substring match would flag a dairy farm as an arms dealer.
+* Accepted: a deterministic, template based memo that cites the numbers from the assessment and never recomputes the score, so it runs offline with no API key. An LLM backend can be added behind the same interface later.
+* Accepted: a destruction test suite that throws empty, None, wrong typed, oversized, and injection style inputs at the screener to prove it never crashes and always returns a valid result.
+* Rejected: fuzzy or alias name matching for now. It raises false positives and is named as future work instead.
+
 ## Notes
 
-* Track B sessions (KYC screening and the credit memo) are added below by the second contributor.
+* Track A was built by Valentine, Track B by Stephanie, both against the shared contract in decision.py.
