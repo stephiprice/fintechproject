@@ -9,6 +9,12 @@ __pycache__/
 # Streamlit secrets (API keys etc.)
 .streamlit/secrets.toml
 
+# Local audit log written at runtime
+audit_log.csv
+
+# pytest cache
+.pytest_cache/
+
 # OS files
 .DS_Store
 Thumbs.db

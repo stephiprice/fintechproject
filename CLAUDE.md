@@ -14,7 +14,9 @@ Respect these boundaries:
 * creditpass/decision.py : the shared contract. It combines the two sub scores into a recommendation. Edit with care.
 * creditpass/credit.py : the credit scoring engine (cash flow, debt, affordability). Track A.
 * creditpass/kyc.py : the KYC/CDD screening engine (UBO, sanctions, country). Track B.
+* creditpass/validation.py : validates and cleans uploaded transaction files before scoring.
 * data/generate_synthetic.py : reproducible synthetic demo data with a fixed seed.
+* tests/ : the pytest suite. Run python -m pytest before merging.
 
 Core principle: keep the deterministic decision separate from any generated text. The score is explainable and traceable to its inputs. This is the product's selling point, and it keeps the score in the EU AI Act lower risk decision support category. Any text written by an LLM (the credit memo) must only draft text and cite sources. It must never compute or change the score.
 
@@ -37,6 +39,10 @@ Rules:
 * A "high" severity flag is an automatic Decline in decision.combine(). Use it only for genuinely disqualifying findings, such as a sanctions hit or an unaffordable loan.
 * If you change the contract in decision.py, update both engines and the UI in the same change.
 
+## Track B memo interface
+
+creditpass/memo.py must expose draft_memo(result: dict) -> str that returns a markdown credit memo. The result argument is the dict returned by decision.combine(). app.py imports this automatically when the file exists, and shows a placeholder until then, so the app always runs. The memo may only describe and cite numbers that are already in result. It must never compute or change the score.
+
 ## Ownership (this is a two person project)
 
 * Track A (Valentine): app.py, creditpass/credit.py, creditpass/decision.py, data/generate_synthetic.py.
@@ -51,6 +57,9 @@ When working in one track, do not edit the other track's files without coordinat
 * Comment why, not what. Match the existing comment style.
 * Every point a score loses should map to a named feature and, where relevant, a flag. Never an unexplained number.
 * Never commit secrets, API keys, or the .venv folder. See .gitignore.
+* Validate all uploaded data through creditpass/validation.py before scoring. Never trust raw input.
+* Never render user supplied text as raw HTML. Do not use unsafe_allow_html with applicant or UBO fields.
+* Add or update a test in tests/ when you change scoring logic or the contract.
 
 ## How to run and verify
 

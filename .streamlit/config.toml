@@ -1,0 +1,6 @@
+# Cap upload size to limit denial-of-service risk from huge files (MB).
+[server]
+maxUploadSize = 5
+
+[theme]
+base = "light"
